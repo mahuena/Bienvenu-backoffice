@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 export type KeyPhrasesModel = {
-    id: string;
+    id?: string;
     en: string;
     fr: string;
     tw?: string;
@@ -17,7 +17,6 @@ export interface IKeyPhrasesResponse {
 }
 
 export const defaultKeyPhrase: KeyPhrasesModel = {
-    id: '',
     en: '',
     fr: '',
     tw: '',

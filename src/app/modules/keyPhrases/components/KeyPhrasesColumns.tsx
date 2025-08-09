@@ -1,14 +1,14 @@
 import {ColumnsType} from "antd/es/table";
-import {KeyPhrases} from "../core/models.ts";
+import {KeyPhrasesModel} from "../core/models.ts";
 import {ButtonPair} from "../../../../_metronic/helpers/components/ButtonPair.tsx";
 
 type columnProps = {
-    onEdit: (data: KeyPhrases) => void;
-    onDelete: (data: KeyPhrases) => void;
+    onEdit: (data: KeyPhrasesModel) => void;
+    onDelete: (data: KeyPhrasesModel) => void;
 };
 
 export const KeyPhrasesColumns = (props: columnProps) => {
-    const column: ColumnsType<KeyPhrases> = [
+    const column: ColumnsType<KeyPhrasesModel> = [
         {
             title: 'Phrase (EN)',
             dataIndex: 'en',
@@ -25,7 +25,7 @@ export const KeyPhrasesColumns = (props: columnProps) => {
             title: 'Actions',
             key: 'action',
             align: 'center',
-            render: (_text, record: KeyPhrases) => (
+            render: (_text, record: KeyPhrasesModel) => (
                 <ButtonPair
                     positiveText={''}
                     positiveAction={() => props.onEdit(record)}

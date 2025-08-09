@@ -45,11 +45,7 @@ const KeyPhrases = () => {
         enableReinitialize: true,
         validationSchema: keyPhraseFormSchema,
         onSubmit: (values) => {
-            const dataToSend = {...values};
-            if (!values.id) {
-                dataToSend.id = undefined;
-            }
-            saveKeyPhrase(dataToSend);
+            saveKeyPhrase(values);
         },
     });
 
@@ -92,7 +88,7 @@ const KeyPhrases = () => {
             showModal={showModal}
             elemenName={''}
             formikInstance={formik}
-            confirmDelete={() => deleteKeyPhrase(phraseData.id)}
+            confirmDelete={() => phraseData.id ? deleteKeyPhrase(phraseData.id) : undefined}
             handleClose={() => setShowModal(ModalViewType.NONE)}
             isLoading={keyPhrasesDataLoading || isSaving || isDeleting}
             tableData={filteredData}

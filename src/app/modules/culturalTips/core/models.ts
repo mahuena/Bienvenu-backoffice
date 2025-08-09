@@ -7,7 +7,7 @@ export interface ICulturalTipResponse {
 }
 
 export interface ICulturalTipModel {
-    id: string;
+    id?: string;
     icon?: string;
     description: {
         en: string;
@@ -16,7 +16,6 @@ export interface ICulturalTipModel {
 }
 
 export const defaultCulturalTipModel: ICulturalTipModel = {
-    id: '',
     icon: '',
     description: {
         en: '',

@@ -87,7 +87,7 @@ export const HousingForm: React.FC<Props> = ({formik}) => (
                                         if (Array.isArray(formik.touched.amenities)) {
                                             const touched = [...formik.touched.amenities];
                                             touched[idx] = true;
-                                            formik.setFieldTouched("amenities", touched);
+                                            formik.setFieldTouched(`amenities.${idx}`, true);
                                         }
                                     }}
                                 />
@@ -143,7 +143,7 @@ export const HousingForm: React.FC<Props> = ({formik}) => (
                                         if (Array.isArray(formik.touched.photos)) {
                                             const touched = [...formik.touched.photos];
                                             touched[idx] = true;
-                                            formik.setFieldTouched("photos", touched);
+                                            formik.setFieldTouched(`photos.${idx}`, true);
                                         }
                                     }}
                                 />

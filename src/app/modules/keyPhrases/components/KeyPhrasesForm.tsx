@@ -1,10 +1,10 @@
 import React from "react";
 import {useFormik} from "formik";
-import {KeyPhrases} from "../core/models.ts";
+import {KeyPhrasesModel} from "../core/models.ts";
 import TextInputField from "../../../../_metronic/helpers/components/TextInputField.tsx";
 
 type Props = {
-    formik: ReturnType<typeof useFormik<KeyPhrases>>;
+    formik: ReturnType<typeof useFormik<KeyPhrasesModel>>;
 };
 
 export const KeyPhrasesForm: React.FC<Props> = ({formik}) => {

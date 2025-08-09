@@ -60,7 +60,7 @@ export const SchoolForm: React.FC<Props> = ({formik}) => {
                                 if (Array.isArray(formik.touched.programs)) {
                                     const touched = [...formik.touched.programs];
                                     touched[idx] = true;
-                                    formik.setFieldTouched("programs", touched);
+                                    formik.setFieldTouched(`programs.${idx}`, true);
                                 }
                             }}
                         />
@@ -106,7 +106,7 @@ export const SchoolForm: React.FC<Props> = ({formik}) => {
                                 if (Array.isArray(formik.touched.amenities)) {
                                     const touched = [...formik.touched.amenities];
                                     touched[idx] = true;
-                                    formik.setFieldTouched("amenities", touched);
+                                    formik.setFieldTouched(`amenities.${idx}`, true);
                                 }
                             }}
                         />
@@ -152,7 +152,7 @@ export const SchoolForm: React.FC<Props> = ({formik}) => {
                                 if (Array.isArray(formik.touched.photos)) {
                                     const touched = [...formik.touched.photos];
                                     touched[idx] = true;
-                                    formik.setFieldTouched("photos", touched);
+                                    formik.setFieldTouched(`photos.${idx}`, true);
                                 }
                             }}
                         />

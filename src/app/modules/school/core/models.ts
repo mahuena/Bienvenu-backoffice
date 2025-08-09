@@ -7,7 +7,7 @@ export interface ISchoolResponse {
 }
 
 export interface ISchoolModel {
-    id: string;
+    id?: string;
     name: {
         en: string;
         fr: string;
@@ -40,7 +40,6 @@ export interface ISchoolModel {
 }
 
 export const defaultSchoolModel: ISchoolModel = {
-    id: '',
     name: {
         en: '',
         fr: '',

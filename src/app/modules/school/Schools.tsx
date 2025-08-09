@@ -44,12 +44,7 @@ const Schools = () => {
         enableReinitialize: true,
         validationSchema: schoolFormSchema,
         onSubmit: (values) => {
-            const {createdAt, updatedAt, ...dataToSend} = values;
-            if (!dataToSend.id) {
-                delete dataToSend.id;
-            }
-            console.log('Form values before saving:', dataToSend);
-            saveSchool(dataToSend);
+            saveSchool(values);
         },
     });
 
@@ -72,7 +67,7 @@ const Schools = () => {
 
     const {mutate: deleteSchool, isLoading: isDeleting} = useMutation(
         (id: string) => ApiService.deleteData(API_ENDPOINTS.SCHOOLS,
-            school_id),
+            id),
         {
             onSuccess: () => {
                 message.success("School deleted successfully").then();
@@ -93,7 +88,7 @@ const Schools = () => {
             showModal={showModal}
             elemenName={''}
             formikInstance={formik}
-            confirmDelete={() => deleteSchool(schoolData.id)}
+            confirmDelete={() => schoolData.id ? deleteSchool(schoolData.id) : undefined}
             handleClose={() => setShowModal(ModalViewType.NONE)}
             isLoading={schoolDataLoading || isSaving || isDeleting}
             tableData={filteredData}

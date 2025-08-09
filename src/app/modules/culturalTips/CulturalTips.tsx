@@ -44,14 +44,7 @@ const CulturalTips = () => {
         enableReinitialize: true,
         validationSchema: culturalTipFormSchema,
         onSubmit: (values) => {
-            const dataToSend = {...values};
-            if (!values.id) {
-                delete dataToSend.id;
-                delete dataToSend.createdAt;
-                delete dataToSend.updatedAt;
-            }
-            saveCulturalTip(dataToSend);
-            console.log('Form values before saving:', dataToSend);
+            saveCulturalTip(values);
         },
     });
 
@@ -94,7 +87,7 @@ const CulturalTips = () => {
             showModal={showModal}
             elemenName={''}
             formikInstance={formik}
-            confirmDelete={() => deleteCulturalTip(tipData.id)}
+            confirmDelete={() => tipData.id ? deleteCulturalTip(tipData.id) : undefined}
             handleClose={() => setShowModal(ModalViewType.NONE)}
             isLoading={culturalTipsDataLoading || isSaving || isDeleting}
             tableData={filteredData}
