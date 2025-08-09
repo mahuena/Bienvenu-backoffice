@@ -1,0 +1,26 @@
+//
+// Theme style
+//
+
+// Initialize
+@import "init";
+
+// Components
+@import "./core/components/components";
+@import "components/components";
+
+// Layout
+@import "layout/layout";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ant-table {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td {
+  font-family: 'Montserrat', sans-serif;
+}
