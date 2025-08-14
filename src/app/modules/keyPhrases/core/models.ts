@@ -5,6 +5,7 @@ export type KeyPhrasesModel = {
     en: string;
     fr: string;
     tw?: string;
+    ga?: string;
     createdAt?: Date;
     updatedAt?: Date;
 
@@ -20,6 +21,7 @@ export const defaultKeyPhrase: KeyPhrasesModel = {
     en: '',
     fr: '',
     tw: '',
+    ga: '',
 };
 
 export const keyPhraseFormSchema = Yup.object().shape({
@@ -30,4 +32,5 @@ export const keyPhraseFormSchema = Yup.object().shape({
         .min(2, 'French phrase must be at least 2 characters')
         .required('French phrase is required'),
     tw: Yup.string(),
+    ga: Yup.string(),
 });

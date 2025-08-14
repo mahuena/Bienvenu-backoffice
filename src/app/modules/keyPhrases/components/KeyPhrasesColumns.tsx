@@ -22,6 +22,10 @@ export const KeyPhrasesColumns = (props: columnProps) => {
             dataIndex: 'tw',
         },
         {
+            title: 'Phrase (GA)',
+            dataIndex: 'ga',
+        },
+        {
             title: 'Actions',
             key: 'action',
             align: 'center',

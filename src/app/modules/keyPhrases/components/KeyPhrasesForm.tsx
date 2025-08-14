@@ -20,6 +20,9 @@ export const KeyPhrasesForm: React.FC<Props> = ({formik}) => {
             <div className="row mb-5">
                 <TextInputField rowSize="12" formik={formik} label="Phrase (TW)" name="tw" type="text"/>
             </div>
+            <div className="row mb-5">
+                <TextInputField rowSize="12" formik={formik} label="Phrase (GA)" name="ga" type="text"/>
+            </div>
         </form>
     );
 };

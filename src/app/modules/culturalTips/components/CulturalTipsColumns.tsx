@@ -20,6 +20,16 @@ export const CulturalTipsColumns = (props: columnProps) => {
             render: (_text, record) => record.description.fr,
         },
         {
+            title: 'Category (EN)',
+            dataIndex: ['category', 'en'],
+            render: (_text, record) => record.category?.en || "",
+        },
+        {
+            title: 'Category (FR)',
+            dataIndex: ['category', 'fr'],
+            render: (_text, record) => record.category?.fr || "",
+        },
+        {
             title: 'Actions',
             key: 'action',
             align: 'center',
